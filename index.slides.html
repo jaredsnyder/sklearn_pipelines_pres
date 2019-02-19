@@ -13268,6 +13268,14 @@ Part 1: sklearn pipelines and pandas
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/pandas_and_sklearn.png"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="sklearn-pipelines">sklearn pipelines<a class="anchor-link" href="#sklearn-pipelines">&#182;</a></h1><ul>
 <li>Way to string together different steps in the cleaning and modeling process</li>
 <li>Simple Interface:  All steps must implement <code>fit</code> and <code>transform</code></li>
@@ -16773,8 +16781,10 @@ Metric on Test Data: 0.11723
 <span class="n">test_features</span> <span class="o">=</span> <span class="n">pipeline_features</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
 <span class="n">dtree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">class_weight</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">)</span><span class="o">/</span><span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">dtree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">residuals</span><span class="o">&lt;-</span><span class="mi">50000</span><span class="p">)</span>
+<span class="n">export_graphviz</span><span class="p">(</span><span class="n">dtree</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="s2">&quot;images/tree1.png&quot;</span><span class="p">,</span> <span class="n">feature_names</span> <span class="o">=</span> <span class="n">test_features</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
-<p>&nbsp;<br>
+<p><img src="images/tree1.png">
+&nbsp;<br>
 &nbsp;<br>
 &nbsp;</p>
 
@@ -16789,8 +16799,10 @@ Metric on Test Data: 0.11723
 <span class="n">test_features</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;LotArea&#39;</span><span class="p">,</span><span class="s1">&#39;GrLivArea&#39;</span><span class="p">,</span><span class="s1">&#39;Lasso&#39;</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">dtree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">class_weight</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">)</span><span class="o">/</span><span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">dtree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">residuals</span><span class="o">&lt;-</span><span class="mi">50000</span><span class="p">)</span>
+<span class="n">export_graphviz</span><span class="p">(</span><span class="n">dtree</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="s2">&quot;images/tree2.png&quot;</span><span class="p">,</span> <span class="n">feature_names</span> <span class="o">=</span> <span class="n">test_features</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
-<p>&nbsp;<br>
+<p><img src="images/tree2.png"><br>
+&nbsp;<br>
 &nbsp;<br>
 &nbsp;</p>
 
